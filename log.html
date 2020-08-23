@@ -1,0 +1,83 @@
+<html lang="en">
+<head>
+<title>Contact Us</title>
+<meta name="viewport" content="width=device-width, initialscale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script language="javascript">
+function unvalidate()
+{
+  var u=f1.t2.value;
+  var re_un1=/\d/;
+  var re_un2=/[a-z]|[A-Z]/;
+  var re_un3=/_/;
+  var re_un=/\W/;
+    if(u.length<8)
+  {
+    var x=document.getElementById("uid");
+     x.innerHTML="enter More than 8 characters";
+flag=1; 
+ }
+  if(!(re_un1.test(u)&&re_un2.test(u)&&re_un3.test(u))||re_un.test(u))
+   {
+         var x=document.getElementById("uid");
+         x.innerHTML="user name should contains alphanumerics and _";
+         flag=1;  
+ }
+}
+ function pwdvalidate()
+{
+  var p=f1.t3.value;
+  var re2=/[A-Z]/;
+  var re3=/\W/;
+      if(!(p.length>8&&re2.test(p)&&re3.test(p)))
+   {
+         var x=document.getElementById("pswd");
+     x.innerHTML="password should be greater than 8 and Should have Uppercase and Special Symbol";
+      flag=1;  
+   }
+}
+</script>
+</head>
+<body>
+<form name="f1" action="valids.php" method="post">
+<div class="form-group">
+<label for="yourName" class="col-sm-3 control-label" style="float:left">Name
+<font color="red"><sup>*</sup></font>
+</label>
+<div class="col-sm-9">
+<div class="input-group">
+<span class="input-group-addon glyphicon glyphicon-user">
+</span>
+<input type="text" class="form-control" name="t2"
+placeholder="Your name please" onblur="unvalidate()" style="width:200px;"><span id="yourName" style="color:green;"></span>
+</div>
+</div>
+</div>
+<div class="form-group">
+<label for="yourName" class="col-sm-3 control-label">Password<font color="red"><sup>*</sup></font>
+</label>
+<div class="col-sm-9">
+<div class="input-group">
+<span class="input-group-addon glyphicon glyphicon-eye-open">
+</span>
+<input type="password" class="form-control"
+placeholder="enter password" onblur="pwdvalidate()" style="width:150px;" name="t3"><span id="pass" style="color:green;"></span>
+</div>
+</div>
+</div>
+<div class="form-group">
+<label for="yourName" class="col-sm-3 control-label">
+</label>
+<div class="col-sm-9">
+<div class="input-group">
+<span class="input-group-addon glyphicon glyphicon-log-in">
+</span>
+<button class="form-control" name="submit"style="width:100px"><a name="login">login</a></button>
+</div>
+</div>
+</div>
+</form>
+</body>
+</html>

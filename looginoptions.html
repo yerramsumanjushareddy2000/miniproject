@@ -1,0 +1,39 @@
+<?php
+  session_start();
+  if(!isset($_SESSION["uname"])){
+    header('Location: log.html#popup');
+  }
+?>
+<html>
+<head>
+<style>
+*
+{
+overflow:hidden;
+}
+</style>
+</head>
+<body>
+<div style="width:1520px;height:250px;background-color:432432"><center><font color="white" style="margin-top:125px;font-size:24px;"><h3>
+NATIONAL SCHOLARSHIP</h3>
+login here</center></font>
+<marquee><font color="white"><i><h1>IF YOU ARE NEW TO THIS SITE CHOOSE FRESH LOGIN OTHERWISE CHOOSE RENEWAL OPTION</h1></i></font></marquee>
+</div>
+<div style="width:160px;">
+</div>
+<div style="margin-left:160px;">
+<a href="log.php" target="_blank">
+<button style="color:red;width:300;height:300"><h1>
+fresh 2017-2018</h1></button></a>
+<a href="log.php" target="_blank">
+<button style="color:red;width:300;height:300"><h1>
+fresh 2018-2019</h1></button></a>
+<a href="log.php" target="_blank">
+<button style="color:red;width:300;height:300"><h1>
+renewal 2018-2019</h1></button></a>
+<a href="log.php" target="_blank">
+<button style="color:red;width:300;height:300"><h1>
+renewal 2019-2020</h1></button></a>
+</div>
+</body>
+</html>

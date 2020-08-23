@@ -1,0 +1,196 @@
+<html lang="en">
+<head>
+<title>Contact Us</title>
+<meta name="viewport" content="width=device-width, initialscale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script language="javascript">
+function yourmarks()
+{
+var mar=f1.t11.value;
+var dm=/\D/;
+if(!(dm.test(mar)&&mar>=980))
+{
+var x=document.getElementById(ymar);
+x.innerHTML="YOU ARE NOT ELIGIBLE";
+}
+}
+function mnvalidate()
+{
+  var m=f1.t8.value;
+  var re_md=/\D/;
+  var re_ms=/^9|^8|^7|^6/;
+  if(m.length<10)
+  {    
+     var x=document.getElementById("last");
+     x.innerHTML="mobile number should be exactly 10 digits";
+     flag=1;
+  }
+  if(re_md.test(m)|| !re_ms.test(m))
+  {
+       var x=document.getElementById("last");
+       x.innerHTML="Mobile Number Should be Digits and starts with 6/7/8/9";
+  }
+}
+function emvalidate()
+{
+       var e=f1.t5.value;
+       var atpos=e.indexOf("@");
+	   //alert(atpos);
+       var dotpos=e.lastIndexOf(".");
+       if(atpos<1 || dotpos<atpos+3 || dotpos+2>=e.length)
+          {
+       var x=document.getElementById("eid");
+       x.innerHTML="Invalid Mail Id";
+  }
+}
+function unvalidate()
+{
+  var u=f1.t2.value;
+  var re_un1=/\d/;
+  var re_un2=/[a-z]|[A-Z]/;
+  var re_un3=/_/;
+  var re_un=/\W/;
+    if(u.length<8)
+  {
+    var x=document.getElementById("uid");
+     x.innerHTML="enter More than 8 characters";
+flag=1; 
+ }
+  if(!(re_un1.test(u)&&re_un2.test(u)&&re_un3.test(u))||re_un.test(u))
+   {
+         var x=document.getElementById("uid");
+         x.innerHTML="user name should contains alphanumerics and _";
+         flag=1;  
+ }
+}
+ function pwdvalidate()
+{
+  var p=f1.t3.value;
+  var re2=/[A-Z]/;
+  var re3=/\W/;
+      if(!(p.length>8&&re2.test(p)&&re3.test(p)))
+   {
+         var x=document.getElementById("pswd");
+     x.innerHTML="password should be greater than 8 and Should have Uppercase and Special Symbol";
+      flag=1;  
+   }
+}
+function validate()
+{
+var flag=0;
+var n=f1.t1.value;
+var u=f1.t2.value;
+var p=f1.t3.value;
+var cp=f1.t4.value;
+var em=f1.t5.value;
+var s=f1.t6.value;
+var dob=f1.t7.value;
+var mn=f1.t8.value;
+var i=f1.t9.value;
+var acno=f1.t10.value;
+var m=f1.t11.value;
+var g=f1.t12.value;
+if(n==''||u==''||p==''||cp==''||em==''||s==''||dob==''||mn==''||i==''||acno==''||m==''||g=='')
+{
+alert("please fill all details");
+
+flag=1;
+} 
+if(flag==0)
+{
+ document.writeln("<html><body bgcolor=cyan>Welcome to"+f+"  "+l+"</body></html>");
+}
+}
+</script>
+</head>
+<body>
+<form name="f1" action="regi.php" method="post">
+<div class="container">
+<br>
+<br>
+<br><br>
+<form class="form-horizontal">
+<div class="form-group">
+<label for="yourName" class="col-sm-3 control-label">Name
+</label>
+<div class="col-sm-9">
+<div class="input-group">
+<span class="input-group-addon glyphicon glyphicon-user">
+</span>
+<input type="text" class="form-control" name="t1"
+placeholder="Your name please" style="width:200px;" required><span id="uid" style="color:green;"></span>
+</div>
+</div>
+</div>
+
+<div class="form-group">
+<label for="yourName" class="col-sm-3 control-label">UserName<font color="red" size="4px"><sup>*</sup></font>
+</label>
+<div class="col-sm-9">
+<div class="input-group">
+<span class="input-group-addon glyphicon glyphicon-user">
+</span>
+<input type="text" class="form-control" name="t2"
+placeholder="Your name please" onblur="unvalidate()" style="width:200px;" required><span id="uid" style="color:green;"></span>
+</div>
+</div>
+</div>
+<div class="form-group">
+<label for="yourName" class="col-sm-3 control-label">Password<font color="red" size="4px"><sup>*</sup></font>
+</label>
+<div class="col-sm-9">
+<div class="input-group">
+<span class="input-group-addon glyphicon glyphicon-lock">
+</span>
+<input type="password" class="form-control" name="t3"
+placeholder="Password please" onblur="pwdvalidate()" style="width:200px;" required><span id="pswd" style="color:green;"></span>
+</div>
+</div>
+</div>
+<div class="form-group">
+<label for="yourName" class="col-sm-3 control-label">confirm password<font color="red" size="4px"><sup>*</sup></font>
+</label>
+<div class="col-sm-9">
+<div class="input-group">
+<span class="input-group-addon glyphicon glyphicon-user">
+</span>
+<input type="password" class="form-control" name="t4"
+placeholder="Your name please" onblur="unvalidate()" style="width:200px;" required><span id="uid" style="color:green;"></span>
+</div>
+</div>
+</div>
+
+<div class="form-group">
+<label for="yourEmail" class="col-sm-3 control-label">Emailid<font color="red" size="4px"><sup>*</sup></font></label>
+<div class="col-sm-9">
+<div class="input-group">
+<span class="input-group-addon">@</span>
+<input type="text" class="form-control" name="t5"
+placeholder="<span class='glyphicon glyphicon-envelope'></span>" onblur="emvalidate()"style="width:200px;" required><span id="eid" style="color:green;"></span>
+</div>
+</div>
+</div>
+
+<div class="form-group">
+<label for="yourban" class="col-sm-3 control-label">
+Gender<font color="red" size="4px"><sup>*</sup></font></label>
+<div class="col-sm-9">
+<div class="input-group">
+<span class="input-group-addon glyphicon glyphicon-user">
+</span>
+<input type="radio" name="t12" value="m" required>male
+<input type="radio" name="t12" value="f" required>female
+</div>
+</div>
+</div>
+<div class="clearfix">&nbsp;</div>
+<div class="col-sm-12 text-center">
+<button type="submit" class="btn btn-primary btn-lg" name="submit1" >&nbsp;SUBMIT</button>
+</div>
+</form>
+</div>
+</form>
+</body>
+</html>
